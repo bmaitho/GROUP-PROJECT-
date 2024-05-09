@@ -35,4 +35,23 @@ const Discover = () => {
                 console.error('Error fetching recommended tracks:', error);
             }
         }
+        fetchRecommendedTracks(); // invoke function
+    }, []);
+
+    // introduced a function to handle playing and pausing tracks when playing
+    const handlePlayTrack = (previewUrl) => {
+        if (currentTrack === previewUrl) {
+            // If the same track is clicked again, pause it
+            setCurrentTrack(null);
+        } else {
+            // Otherwise, play the track
+            setCurrentTrack(previewUrl);
+        }
+    };
+
+    return (
         
+    );
+};
+
+export default Discover;
