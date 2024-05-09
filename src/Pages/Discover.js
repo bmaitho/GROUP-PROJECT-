@@ -50,8 +50,23 @@ const Discover = () => {
     };
 
     return (
-        
-    );
-};
+        <div>
+            <Header />
+            <NavBar />
+            <h2>Discover Recommended Tracks</h2>
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <div className="music-container"> 
+                    {recommendedTracks.map((track, index) => (//iterate over the tracks
+                        <div key={index} className="card"> {/* Added class for each music card */}
+                            {track.cover_url && (
+                                <img
+                                    src={track.cover_url}
+                                    alt={`${track.name} cover`}
+                                    onClick={() => handlePlayTrack(track.preview_url)}
+                                    style={{ cursor: 'pointer' }}
+                                />
+                          
 
 export default Discover;
