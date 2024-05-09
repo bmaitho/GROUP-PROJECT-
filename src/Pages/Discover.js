@@ -8,6 +8,6 @@ const Discover = () => {
     const [loading, setLoading] = useState(true);
     const [currentTrack, setCurrentTrack] = useState(null);
 
-    
-
-export default Discover;
+    useEffect(() => { // introduced use effect hook
+        const fetchRecommendedTracks = async () => {
+         
